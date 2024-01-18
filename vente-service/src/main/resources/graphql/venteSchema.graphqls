@@ -1,0 +1,38 @@
+type Query{
+    findVenteById(id: ID!): Vente
+    findAllVentes: [Vente!]!
+}
+
+type Mutation{
+    createVente(input: VenteInput!): Vente
+    updateVente(id: ID! input: VenteInput!): Vente
+    deleteVente(id: ID!): Vente
+}
+
+type Vente{
+    idVente: ID!
+    idA: Int!
+    acheteur: Acheteur!
+    idP: Int!
+    produit: Produit
+}
+
+input VenteInput{
+    idVente: ID!
+    idA: Int!
+    idP: Int!
+}
+
+type Acheteur{
+    idA: ID!
+    nom: String
+    ville: String
+}
+
+type Produit{
+    idP: ID!
+    marque: String!
+    desc: String!
+    prix: Float!
+    quantite: Int!
+}

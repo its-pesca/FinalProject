@@ -1,0 +1,21 @@
+type Query{
+    findAcheteurById(id: ID!): Acheteur
+    findAllAcheteurs: [Acheteur!]!
+}
+
+type Mutation {
+    createAcheteur(input: AcheteurInput!): Acheteur
+    updateAcheteur(id: ID! input: AcheteurInput!): Acheteur
+    deleteAcheteur(id: ID!): Acheteur
+}
+
+type Acheteur {
+    idA: ID!
+    nom: String
+    ville: String
+}
+
+input AcheteurInput{
+    nom: String
+    ville: String
+}

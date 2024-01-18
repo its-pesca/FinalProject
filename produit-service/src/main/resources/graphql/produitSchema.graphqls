@@ -1,0 +1,25 @@
+type Query{
+    findProduitById(id: ID!): Produit
+    findAllProduits: [Produit!]!
+}
+
+type Mutation{
+    createProduit(input: ProduitInput!): Produit
+    updateProduit(id: ID! input: ProduitInput!): Produit
+    deleteProduit(id: ID!): Produit
+}
+
+type Produit {
+    idP: ID!
+    marque: String!
+    desc: String!
+    prix: Float!
+    quantite: Int!
+}
+
+input ProduitInput{
+    marque: String!
+    desc: String!
+    prix: Float!
+    quantite: Int!
+}
